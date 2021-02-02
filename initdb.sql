@@ -30,11 +30,7 @@ CREATE TABLE users
     -- last action day
     LastActionDay INT
 );
--- insert data to the users table, without ID which is created automatically
-INSERT INTO users (FullName, UserNAme, Pwd, ActionsCounter, LastActionDay)
-    VALUES ('Almighty the Maker of All', 'God', 'ThinSilent', 0, 0);
-INSERT INTO users (FullName, UserNAme, Pwd, ActionsCounter, LastActionDay)
-    VALUES ('Devil the God Rebel', 'Loki', 'InFlames', 0, 0);
+
 
 
 
@@ -51,14 +47,6 @@ CREATE TABLE department
     -- Manager ID FK to employees
 
 );
--- insert data to the department table, without ID which is created automatically
-INSERT INTO department (DepName)
-    VALUES ('Infernal');
-INSERT INTO department (DepName)
-    VALUES ('Heaven');
-INSERT INTO department (DepName)
-    VALUES ('Fallen');
-
 
 -- Employee Table
 -- - ID (PK)
@@ -81,43 +69,6 @@ CREATE TABLE employees
 );
 
 
--- insert data to the employees table, without ID which is created automatically
-INSERT INTO employees (FirstName, LastName, YearStarted, DepID)
-    VALUES ('Lilith', 'The First Woman', 0, 1);
-INSERT INTO employees (FirstName, LastName, YearStarted, DepID)
-    VALUES ('Naama', 'of Seduction', 10, 1);
-INSERT INTO employees (FirstName, LastName, YearStarted, DepID)
-    VALUES ('BaalZvuv', 'of Insects', 14, 1);
-INSERT INTO employees (FirstName, LastName, YearStarted, DepID)
-    VALUES ('Sammael', 'The Venom', 3, 1);
-INSERT INTO employees (FirstName, LastName, YearStarted, DepID)
-    VALUES ('Abaddon', 'The Destroyer', 20, 1);
-
-INSERT INTO employees (FirstName, LastName, YearStarted, DepID)
-    VALUES ('Michael', 'Mercy', 1, 2);
-INSERT INTO employees (FirstName, LastName, YearStarted, DepID)
-    VALUES ('Barachiel', 'Guardian', 56, 2);
-INSERT INTO employees (FirstName, LastName, YearStarted, DepID)
-    VALUES ('Gabriel', 'Messenger', 0, 2);
-INSERT INTO employees (FirstName, LastName, YearStarted, DepID)
-    VALUES ('Israfil', 'Music', 56, 2);
-INSERT INTO employees (FirstName, LastName, YearStarted, DepID)
-    VALUES ('Zuriel', 'Wisdom', 56, 2);
-INSERT INTO employees (FirstName, LastName, YearStarted, DepID)
-    VALUES ('Paniel', 'Hope', 56, 2);
-
-INSERT INTO employees (FirstName, LastName, YearStarted, DepID)
-    VALUES ('Shemihazah', 'The First Watcher', 2, 3);
-INSERT INTO employees (FirstName, LastName, YearStarted, DepID)
-    VALUES ('Araqiel', 'of the Signs of the Earth', 55, 3);
-INSERT INTO employees (FirstName, LastName, YearStarted, DepID)
-    VALUES ('Armaros', 'Enchantments', 44, 3);
-INSERT INTO employees (FirstName, LastName, YearStarted, DepID)
-    VALUES ('Baraqel', 'Astrology', 20, 3);
-INSERT INTO employees (FirstName, LastName, YearStarted, DepID)
-    VALUES ('Penemue', 'Secrets of the Wisdom', 0, 3);
-INSERT INTO employees (FirstName, LastName, YearStarted, DepID)
-    VALUES ('Hazaqiel', 'Meteorology', 98, 3);
 
 -- Add Manager foreign key column ad data
 ALTER TABLE department ADD 
