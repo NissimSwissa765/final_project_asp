@@ -1,0 +1,52 @@
+﻿@model Project1.Models.Employee
+@{ ViewData["Title"] = "Edit Employee Page"; }
+
+
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+
+        <div class="col-sm-8">
+            <div class="card-body">
+                <h4>Edit Employee:</h4>
+                <h3>  Id: @Html.DisplayFor(x => x.Id)</h3>
+
+                <form action="/Employee/UpdateEmp" method="post">
+                    <table class="table">
+                        <tr style="visibility: hidden;">
+                            <th>ID:</th>
+                            <td>
+                                @Html.HiddenFor(x => x.Id, new { htmlAttributes = new { @class = "form-control" } })
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>First Name</th>
+                            <td>@Html.EditorFor(x => x.FirstName)</td>
+                        </tr>
+                        <tr>
+                            <th>Last Name</th>
+                            <td>@Html.EditorFor(x => x.LastName)</td>
+                        </tr>
+                        <tr>
+                            <th>Year Started</th>
+                            <td>@Html.EditorFor(x => x.YearStarted)</td>
+                        </tr>
+                        <tr>
+                            <th>Department</th>
+                            <td>
+                                <select name="DepID">
+                                    @foreach (var item in ViewBag.depList)
+                                    {
+                        <option value="@item.Id">@item.DepName</option>}
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                    <input class="btn btn-primary" type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+
+        <div class="col"></div>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+﻿﻿@{ ViewData["Title"] = "Login Page"; }
+<script></script>
+
+<div class="text-center">
+    <h3>Welcome to Limbo</h3>
+</div>
+
+<br />
+<br />
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+
+        <div class="col-sm-4">
+            <div class="card-body">
+                <form action="/Login/VerifyLogin" method="post">
+                    <table>
+                        <tr>
+                            <th colspan="2">Login to your Realm</th>
+                        </tr>
+                        <tr>
+                            <td>User Name: </td>
+                            <td><input type="text" name="user"></td>
+                        </tr>
+                        <tr>
+                            <td>Pasword</td>
+                            <td><input type="password" name="pwd"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="d-grid gap-2"><input type="submit" value="Submit" class="btn btn-primary" style="width: 100%;"></div>
+                            </td>
+                        </tr>
+                    </table>
+                    <p style="color: red;">@ViewBag.msg</p>
+                    @* @if (@ViewBag.LoginFailed!=null)
+                        {
+                            <p style="color: red;">Log in falied, please try again</p>
+                        }
+                        else
+                        {
+                            if (@ViewBag.msg!=null)
+                            {
+                                <p style="color: red;">You were logged out due to actions count over the limit (80), counter will be reset at 00:00</p>
+                            }
+                        } *@
+
+                </form>
+            </div>
+        </div>
+
+        <div class="col"></div>
+    </div>
+</div>

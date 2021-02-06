@@ -1,0 +1,35 @@
+﻿@{ ViewData["Title"] = "Add A Department Page"; }
+
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+
+        <div class="col-sm-8">
+            <div class="card-body">
+                <h4>Add A Department</h4>
+                <form action="/Department/Add" method="post">
+                    <table class="table">
+                        <tr>
+                            <th>Department Name</th>
+                            <td><input type="text" name="DepName"></td>
+                        </tr>
+                        <tr>
+                            <th>Manager</th>
+                            <td>
+                                <select name="Manager">
+                                    @foreach (var item in ViewBag.List)
+                                    {
+                        <option value=@item.Id>@item.FirstName @item.LastName</option>}
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                    <input class="btn btn-primary" type="submit" value="Add">
+                </form>
+            </div>
+        </div>
+
+        <div class="col"></div>
+    </div>
+</div>
+

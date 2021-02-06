@@ -1,0 +1,52 @@
+﻿@{ ViewData["Title"] = "Shift Home Page"; }
+
+
+<br />
+<br />
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+
+        <div class="col-sm-12">
+            <div class="card-body">
+                <h4>Shifts Home Page</h4>
+                <table class="table">
+                    <tr>
+                        <th>ID</th>
+                        <th>Date</th>
+                        <th>Time Start</th>
+                        <th>Time End</th>
+                        <th>Registered</th>
+                    </tr>
+                    @foreach (var shift in ViewBag.shiftsTable)
+                    {
+        <tr>
+            <td style="vertical-align: middle;">@shift.Id</td>
+            <td style="vertical-align: middle;">@shift.ShiftDate.ToString("yyyy-MM-dd")</td>
+            <td style="vertical-align: middle;">@shift.StartTime</td>
+            <td style="vertical-align: middle;">@shift.EndTime</td>
+            <td>
+                <table>
+                    @foreach (var item in ViewBag.shiftsByEmp)
+                    {
+                        if (@shift.Id == item.ShiftIds)
+                        {
+    <tr>
+        <td>
+            @item.FullName()
+        @Html.ActionLink("Edit", "EditPage", "Employee", new { empID = @item.EmployeeID }, new { @class = "btn btn-light btn-sm" })
+    </td>
+</tr>}
+                }
+                </table>
+            </td>
+        </tr>            }
+                </table>
+                <a href="/Shift/AddPage" class="btn btn-primary">Add A Shift</a>
+            </div>
+        </div>
+
+        <div class="col"></div>
+    </div>
+</div>

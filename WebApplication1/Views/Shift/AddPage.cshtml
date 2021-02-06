@@ -1,0 +1,33 @@
+﻿@{ ViewData["Title"] = "Add A Shift Page"; }
+
+
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+
+        <div class="col-sm-8">
+            <div class="card-body">
+                <h4>Add A Shift</h4>
+                <form action="/Shift/Add" method="post">
+                    <table class="table">
+                        <tr>
+                            <th>Date</th>
+                            <td> <input type="date" name="Date"> </td>
+                        </tr>
+                        <tr>
+                            <th>Start Time</th>
+                            <td> <input type="number" name="StartTime" min="0" max="23"></td>
+                        </tr>
+                        <tr>
+                            <th>End Time</th>
+                            <td> <input type="number" name="EndTime" min="0" max="23"></td>
+                        </tr>
+                    </table>
+                    <input class="btn btn-primary" type="submit" value="Add">
+                </form>
+            </div>
+        </div>
+
+        <div class="col"></div>
+    </div>
+</div>

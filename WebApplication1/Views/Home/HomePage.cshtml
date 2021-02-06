@@ -1,0 +1,42 @@
+﻿@{ ViewData["Title"] = $"{@ViewBag.FullName} Home Page"; }
+
+<div class="text-center">
+    <h3>Welcome to your realm, @ViewBag.FullName</h3>
+</div>
+
+
+<br />
+<br />
+<br />
+<div class="row">
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Employees</h5>
+                <p class="card-text">All Employees data.</p>
+                <p class="card-text">Here you may search and edit emplyees information and their shifts.</p>
+                <a href="/Employee/Homepage" class="btn btn-primary">To Employees</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Departments</h5>
+                <p class="card-text">All the deparments data.</p>
+                <p class="card-text">Here you'll be able to edit and delete departments.</p>
+                <a href="/Department/HomePage" class="btn btn-primary">To Deparments</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Shifts</h5>
+                <p class="card-text">All shifts information.</p>
+                <p class="card-text">Here you'll find a tool to add a shift and view the employees registered to each shift.</p>
+                <a href="/Shift/HomePage" class="btn btn-primary">To Shifts</a>
+            </div>
+        </div>
+    </div>
+</div>

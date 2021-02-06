@@ -1,0 +1,47 @@
+﻿@{ ViewData["Title"] = "Deparments Home Page"; }
+
+@* <di class="text-center">
+        <h3></h3>
+    </div> *@
+
+
+<br />
+<br />
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+
+        <div class="col-sm-8">
+            <div class="card-body">
+                <h4>Deparments Home Page</h4>
+                <table class="table">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Manager</th>
+                        <th colspan="2"></th>
+                    </tr>
+                    @foreach (var dep in ViewBag.depTable)
+                    {
+        <tr>
+            <td style="vertical-align: middle;">@dep.Id</td>
+            <td style="vertical-align: middle;">@dep.DepName</td>
+            <td style="vertical-align: middle;">@dep.Manager</td>
+            <td style="vertical-align: middle;">@Html.ActionLink("Edit", "EditPage", "Department", new { depID = dep.Id }, new { @class = "btn btn-info" })</td>
+            <td style="vertical-align: middle;">
+                @if (dep.IsEmpty())
+                {@Html.ActionLink("Delete", "Delete", "Department", new { depID = dep.Id }, new { @class = "btn btn-danger" })}
+            else
+            {<button type="button" class="btn btn-danger" disabled>Delete</button>}
+        </td>
+    </tr>            }
+                </table>
+                <div class="card-footer text-muted">Delete button will be avilable once the Department is empty</div>
+                <a href="/Department/AddPage" class="btn btn-primary">Add A Department</a>
+            </div>
+        </div>
+
+        <div class="col"></div>
+    </div>
+</div>
