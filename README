@@ -1,0 +1,11 @@
+nissim project 
+C# asp .net project 
+use filter to valid user login 
+use filter to valid active operation
+use inmemor "database " for testing and running 
+HttpContext.Session for storge Session data llike user log in and valid operetions 
+use singletone manager for data storge and operetions
+ 
+user loging 
+username : nissim
+password : 654321
